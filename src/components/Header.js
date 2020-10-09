@@ -10,29 +10,19 @@ import Button from "react-bootstrap/Button";
 export default function Header() {
   return (
     <div>
-      <Navbar style={{ background: "black" }}>
-        <Navbar.Brand id="navbar-title">
-          BROTHER BARBER
-        </Navbar.Brand>
+      <Navbar className="fixed-top" style={{ background: "black" }}>
+        <Navbar.Brand id="navbar-title">BROTHER BARBER</Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link
-            href="#about"
-            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+          <Nav.Link href="#about" id="navbar-link">
             ABOUT
           </Nav.Link>
-          <Nav.Link
-            href="#team"
-            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+          <Nav.Link href="#team" id="navbar-link">
             TEAM
           </Nav.Link>
-          <Nav.Link
-            href="#book"
-            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+          <Nav.Link href="#book" id="navbar-link">
             BOOK
           </Nav.Link>
-          <Nav.Link
-            href="#contact"
-            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+          <Nav.Link href="#contact" id="navbar-link">
             CONTACT
           </Nav.Link>
         </Nav>

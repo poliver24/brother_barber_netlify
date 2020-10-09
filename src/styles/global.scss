@@ -1,5 +1,50 @@
 #navbar-title {
     color: white;
     font-family: "Raleway";
-    font-size: 24px;
+    font-size: 30px;
+    padding: 0px 15px;
+    letter-spacing: 4px;
+    height: 60px;
+    line-height: 60px;
 }
+
+#navbar-link {
+    color: white;
+    font-family: "Lato";
+    font-size: 17px;
+    padding: 0px 15px;
+    letter-spacing: 3px;
+}
+
+#navbar-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(0, 192, 250);
+    transition: width .3s
+}
+
+#navbar-link:hover::after {
+    width: 100%;
+    transition: width .3s
+}
+
+ .navbar {
+     min-height: 60px;
+ }
+
+ .navbar-toggle {
+     /* (80px - button height 34px) / 2 = 23px */
+     margin-top: 23px;
+     padding: 9px 10px !important;
+ }
+
+ @media (min-width: 768px) {
+     .navbar-nav>li>a {
+         /* (80px - line-height of 27px) / 2 = 26.5px */
+         padding-top: 26.5px;
+         padding-bottom: 26.5px;
+         line-height: 27px;
+     }
+ }
