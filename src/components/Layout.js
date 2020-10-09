@@ -2,8 +2,11 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Header from './Header'
-// import './all.sass'
-import "bootstrap/dist/css/bootstrap.min.css";
+// import './style.css'
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "mdbreact/dist/css/mdb.css";
+// import "./global.scss";
+
 
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'

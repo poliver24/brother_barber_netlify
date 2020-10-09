@@ -10,30 +10,33 @@ import Button from "react-bootstrap/Button";
 export default function Header() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>
-          <a href="#">
-            <img src={logo} style={{ width: 100, marginTop: -7 }} />
-          </a>
+      <Navbar style={{ background: "black" }}>
+        <Navbar.Brand id="navbar-title">
+          BROTHER BARBER
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Nav className="ml-auto">
+          <Nav.Link
+            href="#about"
+            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+            ABOUT
+          </Nav.Link>
+          <Nav.Link
+            href="#team"
+            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+            TEAM
+          </Nav.Link>
+          <Nav.Link
+            href="#book"
+            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+            BOOK
+          </Nav.Link>
+          <Nav.Link
+            href="#contact"
+            style={{ color: "white", fontFamily: "Lato", fontSize: "15px" }}>
+            CONTACT
+          </Nav.Link>
         </Nav>
       </Navbar>
     </div>
   );
 }
-
-// const Header = class extends React.Component {
-//   render(){
-//     return (
-//           <div>
-           
-//           </div>
-//          )
-//         }
-//       }
-
-// export default Header
