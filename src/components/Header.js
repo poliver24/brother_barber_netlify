@@ -12,7 +12,7 @@ import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 export default function Header() {
   return (
     <div>
-      <Navbar className="fixed-top" style={{ background: "black" }}>
+      <Navbar className="fixed-top" style={{ background: "white" }}>
         <div>
           <DrawerToggleButton />
         </div>

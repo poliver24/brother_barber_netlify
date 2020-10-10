@@ -1,5 +1,5 @@
 #navbar-title {
-    color: white;
+    color: black;
     font-family: "Raleway";
     font-size: 30px;
     padding: 0px 15px;
@@ -9,7 +9,7 @@
 }
 
 #navbar-link {
-    color: white;
+    color: black;
     font-family: "Lato";
     font-size: 17px;
     padding: 0px 15px;
@@ -21,7 +21,7 @@
     display: block;
     width: 0;
     height: 2px;
-    background: rgb(0, 192, 250);
+    background: rgb(131, 131, 131);
     transition: width .3s
 }
 
