@@ -1,9 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Header from './Header'
 import SideDrawer from './SideDrawer/SideDrawer'
-import Backdrop from './Backdrop/Backdrop'
 // import './style.css'
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "mdbreact/dist/css/mdb.css";
@@ -14,7 +13,16 @@ import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
+
+  const [drawerStatus, setDrawerStatus] = useState(false)
+
   const { title, description } = useSiteMetadata()
+
+  const handleDrawerChange = () => {
+    setDrawerStatus(true)
+    console.log(drawerStatus)
+  }
+
   return (
     <div style={{height: '100%'}}>
       <Helmet>
@@ -55,9 +63,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Header />
-      <SideDrawer />
-      <Backdrop />
+      <Header drawerChange={handleDrawerChange}/>
+      <SideDrawer drawer={drawerStatus}/>
       <div>{children}</div>
       <Footer />
     </div>

@@ -9,12 +9,11 @@ import Button from "react-bootstrap/Button";
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 
 
-export default function Header() {
-  return (
+const Header = props => (
     <div>
       <Navbar className="fixed-top" style={{ background: "white" }}>
         <div>
-          <DrawerToggleButton />
+          <DrawerToggleButton click={props.handleDrawerChange}/>
         </div>
         <Navbar.Brand id="navbar-title">BROTHER BARBER</Navbar.Brand>
         <Nav className="ml-auto">
@@ -33,5 +32,6 @@ export default function Header() {
         </Nav>
       </Navbar>
     </div>
-  );
-}
+);
+
+export default Header;
