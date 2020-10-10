@@ -2,6 +2,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Header from './Header'
+import SideDrawer from './SideDrawer/SideDrawer'
+import Backdrop from './Backdrop/Backdrop'
 // import './style.css'
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "mdbreact/dist/css/mdb.css";
@@ -14,7 +16,7 @@ import { withPrefix } from 'gatsby'
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <div style={{height: '100%'}}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -54,6 +56,8 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Header />
+      <SideDrawer />
+      <Backdrop />
       <div>{children}</div>
       <Footer />
     </div>

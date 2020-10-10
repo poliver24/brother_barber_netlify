@@ -6,11 +6,16 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
+import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
+
 
 export default function Header() {
   return (
     <div>
       <Navbar className="fixed-top" style={{ background: "black" }}>
+        <div>
+          <DrawerToggleButton />
+        </div>
         <Navbar.Brand id="navbar-title">BROTHER BARBER</Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link href="#about" id="navbar-link">
