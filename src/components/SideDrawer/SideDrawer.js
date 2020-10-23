@@ -12,17 +12,17 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import "@material/drawer/dist/mdc.drawer.css";
+import { OpenInNewRounded } from "@material-ui/icons";
 
 class sideDrawer extends Component {
-  state = { open: this.props.drawer};
-
+  
   render() {
     return (
       <div>
         <Drawer
           modal
-          open={this.state.open}
-          onClose={() => this.setState({ open: false })}>
+          open="true"
+         >
           <List>
             {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
               <ListItem button key={text}>
@@ -45,12 +45,6 @@ class sideDrawer extends Component {
             ))}
           </List>
         </Drawer>
-        <DrawerAppContent>
-          Your really cool app content here
-          <button onClick={() => this.setState({ open: !this.state.open })}>
-            {this.state.open ? "Open" : "Close"} Drawer
-          </button>
-        </DrawerAppContent>
       </div>
     );
   }

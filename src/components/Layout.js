@@ -19,8 +19,17 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
   const handleDrawerChange = () => {
-    setDrawerStatus(true)
-    console.log(drawerStatus)
+    setDrawerStatus(!drawerStatus)
+  }
+
+  const closeDrawer = () => {
+    setDrawerStatus(false)
+  }
+
+  let sideDrawer;
+
+  if (drawerStatus) {
+    sideDrawer = <SideDrawer />
   }
 
   return (
@@ -63,8 +72,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Header drawerChange={handleDrawerChange}/>
-      <SideDrawer drawer={drawerStatus}/>
+      <Header drawerClickHandler={handleDrawerChange}/>
+      {sideDrawer}
       <div>{children}</div>
       <Footer />
     </div>
