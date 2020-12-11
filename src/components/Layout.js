@@ -3,11 +3,6 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Header from './Header'
 import SideDrawer from './SideDrawer/SideDrawer'
-// import './style.css'
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "mdbreact/dist/css/mdb.css";
-// import "./global.scss";
-
 
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
@@ -23,17 +18,19 @@ const TemplateWrapper = ({ children }) => {
   }
 
   const closeDrawer = () => {
-    setDrawerStatus(false)
+    if (sideDrawer){
+      setDrawerStatus(false)
+    }
   }
 
   let sideDrawer;
 
   if (drawerStatus) {
-    sideDrawer = <SideDrawer />
+    sideDrawer = <SideDrawer closeDrawer={closeDrawer} />;
   }
 
   return (
-    <div style={{height: '100%'}}>
+    <div style={{ height: "100%" }}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -42,24 +39,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          href={`${withPrefix("/")}img/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`${withPrefix("/")}img/favicon-32x32.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
@@ -69,15 +66,15 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
+          content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Header drawerClickHandler={handleDrawerChange}/>
+      <Header drawerClickHandler={handleDrawerChange} />
       {sideDrawer}
       <div>{children}</div>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default TemplateWrapper
